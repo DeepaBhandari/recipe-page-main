@@ -1,3 +1,12 @@
+/* Regular font */
+@font-face {
+    font-family: "young-seriff";
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: "outfit";
+    src: url('./assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+}
 /* || Reset */
 *::after,
 *::before{
@@ -16,18 +25,18 @@ img{
 
 :root{
     /* FONTS */
-    --FF: "Nunito", sans-serif;
-    --FF-HEADINGS: "Fugaz One", cursive;
+    --FF: "outfit", sans-serif;
+    --FF-HEADINGS: "young-seriff", sans-serif;
     --FS: clamp(1rem, 2.2vh,1.5rem);
 
     /* colors */
-    --BGCOLOR: orange;
-    --BGCOLOR-FADE: rgb(252,220,160);
+    --BGCOLOR: rgb(239, 220, 188);
+    --BGCOLOR-FADE: rgb(236, 214, 174);
     --BGIMAGE: linar-gradient(to bottom, var(--BGCOLOR),var(--BGCOLOR-FADE));
-    --BODY-BGCOLOR: #FFF;
-    --FONT-COLOR: #000;
+    --BODY-BGCOLOR: rgb(250, 235, 231);
+    --FONT-COLOR: #484848;
     --BORDER-COLOR: #333;
-    --HIGHLIGHT-COLOR: rgb(51,178,51);
+    --HIGHLIGHT-COLOR: rgb(131, 64, 1);
     --HEADER-BGCOLOR: #000;
     --HEADER-COLOR: #FFF;
 
@@ -52,6 +61,7 @@ img{
 }
 
 /* GENERAL STYLES */
+
 html{
     scroll-behavior: smooth;
     color: var(--FS);
@@ -61,16 +71,18 @@ html{
 }
 body{
  background-color:var(--BODY-BGCOLOR);
- color: var(--FS);
+ color: var(--FONT-COLOR);
  min-height: 100vh;
  max-width: 800px;
  margin:0 auto;
- border-left: var(--BORDERS);
- border-right: var(--BORDERS);
+ font-family: var(--FF);
+ letter-spacing:0.5px;
+
 }
 h1,h2,h3{
     font-family:var(--FF-HEADINGS);
-    letter-spacing: 0.1em;
+    color:#313030;
+    font-weight: 100;
 }
 h2,h3{
     margin-bottom:1em;
@@ -80,11 +92,11 @@ p{
     line-height: 1.5;
 }
 /* HEADER */
-.header{
+/* .header{
     position:sticky;
     top:0;
     z-index:1;
-}
+} */
 
 .container{
 background-color: white;
@@ -93,8 +105,41 @@ padding:20px;
 margin:20px;
 
 }
-.header__image{
-    width:fit-content;
-    height:fit-content;
-    margin:30px;
+.container__image img{
+    border-radius:10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
+li {
+    margin-bottom: 10px; 
+}
+
+.preparation{
+    background-color: rgb(250, 231, 244);
+    padding:20px;
+    border-radius:20px;
+}
+.preparation__p{
+    color:rgb(107, 39, 107);
+    font-size:18px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        place-content: center;
+        margin:10px;
+    }
+    tr:not(:last-child) {
+        border-bottom: 1px solid #ddd; /* Add a solid border at the bottom of each row except the last one */
+    }
+
+    
+    .nutrition__table--secondcol {
+        /* border-bottom: 1px solid #ddd; */
+        color:var(--HIGHLIGHT-COLOR)
+    }
+    
+    td {
+        padding: 8px;
+        text-align: left;
+    }
+
