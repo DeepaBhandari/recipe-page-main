@@ -101,8 +101,8 @@ p{
 .container{
 background-color: white;
 border-radius:  30px;
-padding:20px;
-margin:20px;
+padding:32px;
+margin:22px;
 
 }
 .container__image img{
@@ -141,5 +141,9 @@ li {
     td {
         padding: 8px;
         text-align: left;
+    }
+    figure{
+        margin:0;
+        padding:0;
     }
 
